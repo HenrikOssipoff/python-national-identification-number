@@ -61,8 +61,7 @@ def huamnize(nin):
     elif century == 'A':
         year = str(int(year) + 2000)
 
-    print locals()
     return locals()
 
 def sanitize(nin):
-    return nin
+    return nin.strip()
