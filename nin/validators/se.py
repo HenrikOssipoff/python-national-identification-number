@@ -43,7 +43,7 @@ def humanize(nin):
         year_prefix = '20'
 
     year = year_prefix + year
-    print locals()
+
     return locals()
 
 def sanitize(nin):
