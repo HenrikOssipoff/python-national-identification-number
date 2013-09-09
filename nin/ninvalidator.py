@@ -15,7 +15,7 @@ class NinValidator(object):
             self.nin = nin
 
     def set_country(self, country):
-        self._validator = importlib.import_module('validators.%s' % (country))
+        self._validator = importlib.import_module('nin.validators.%s' % (country))
         try:
             pass
         except:
