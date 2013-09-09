@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup, find_packages
+from setuptools import setup, find_packages
 
 version = '0.1'
 
@@ -11,6 +11,5 @@ setup(
     author='Henrik Ossipoff Hansen',
     author_email='henrik.ossipoff@gmail.com',
     url='https://github.com/HenrikOssipoff/python-national-identification-number',
-    packages=find_packages(),
-    install_requires=['distribute']
+    packages=find_packages()
 )
