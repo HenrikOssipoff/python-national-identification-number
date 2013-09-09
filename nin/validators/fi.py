@@ -15,7 +15,7 @@ def is_valid(nin):
     if len(nin) != 11:
         return False
 
-    nin = huamnize(nin)
+    nin = humanize(nin)
 
     if int(nin['year']) < 1800:
         return False
@@ -34,7 +34,7 @@ def get_age(nin):
     if len(nin) != 11:
         return None
 
-    nin = huamnize(nin)
+    nin = humanize(nin)
 
     if int(nin['year']) < 1800:
         return None
@@ -46,7 +46,7 @@ def get_age(nin):
 
     return calculate_age(born)
 
-def huamnize(nin):
+def humanize(nin):
     day = nin[0:2]
     month = nin[2:4]
     year = nin[4:6]

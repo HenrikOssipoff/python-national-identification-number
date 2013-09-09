@@ -46,3 +46,10 @@ class NinValidator(object):
         if not self._validator:
             return None
         return self._validator.sanitize(self._nin)
+
+    @property
+    def humanize(self):
+        try:
+            return self._validator.humanize(self._nin)
+        except:
+            return None
