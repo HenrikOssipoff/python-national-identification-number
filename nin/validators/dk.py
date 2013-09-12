@@ -9,11 +9,11 @@ def sanitize(nin):
     # Sanitize
     if type(nin) is int:
         nin = str(nin)
-    
+
     m = re.match('(\d{6})[- ]*(\d{4})', nin)
     if m is None or len(m.groups()) != 2:
         raise TypeError
-   
+
     return '{0}{1}'.format(m.groups()[0], m.groups()[1])
 
 def is_valid(nin):
@@ -49,13 +49,8 @@ def get_age(nin):
         century = '20'
     else:
         century = '19'
-   
+
     #Get year from nin again, because we need it as a string
     year = int('{0}{1}'.format(century, nin[4:6]))
-    date = datetime.date(year, int(month_part), int(day_part))
-    today = datetime.date.today()
-
-    ts = dateutils.relativedelta(today, date)
-    return ts.years
-
-
+    born = datetime.date(year, int(month_part), int(day_part))
+    return calculate_age(born)
