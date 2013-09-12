@@ -3,7 +3,6 @@
 
 import re
 import datetime
-import dateutils
 
 def sanitize(nin):
     # Sanitize
