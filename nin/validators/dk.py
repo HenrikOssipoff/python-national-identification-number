@@ -3,6 +3,7 @@
 
 import re
 import datetime
+from generic import calculate_age
 
 def sanitize(nin):
     # Sanitize
@@ -25,6 +26,9 @@ def is_valid(nin):
 def get_age(nin):
     # Should sanitize first
     nin = sanitize(nin)
+
+    if len(nin) not in [10, 11]:
+        return None
 
     year_part = int(nin[4:6])
     day_part = nin[0:2]
