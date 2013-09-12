@@ -25,9 +25,9 @@ def is_valid(nin):
 
 def get_age(nin):
     # Should sanitize first
-    nin = sanitize(nin)
-
-    if len(nin) not in [10, 11]:
+    try:
+        nin = sanitize(nin)
+    except:
         return None
 
     year_part = int(nin[4:6])
