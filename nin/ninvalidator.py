@@ -9,9 +9,9 @@ class NinValidator(object):
     def __init__(self, country=None, nin=None):
         self._nin = None
         self._validator = None
-        if country:
+        if country != None:
             self.set_country(country)
-        if nin:
+        if nin != None:
             self.nin = nin
 
     def set_country(self, country):
