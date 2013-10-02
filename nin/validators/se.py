@@ -31,7 +31,7 @@ def get_age(nin):
     return calculate_age(born)
 
 def humanize(nin):
-    if not '-' in nin and not '+' in nin and:
+    if not '-' in nin and not '+' in nin:
         if len(nin) == 10:
             nin = '-'.join([nin[:6], nin[6:]])
         elif len(nin) == 12:
