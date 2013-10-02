@@ -31,6 +31,11 @@ def get_age(nin):
     return calculate_age(born)
 
 def humanize(nin):
+    if not '-' in nin and not '+' in nin and:
+        if len(nin) == 10:
+            nin = '-'.join([nin[:6], nin[6:]])
+        elif len(nin) == 12:
+            nin = '-'.join([nin[2:8], nin[8:]])
     year = nin[0:2]
     month = nin[2:4]
     day = nin[4:6]
