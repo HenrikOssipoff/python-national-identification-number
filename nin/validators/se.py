@@ -8,7 +8,7 @@ break_year = 2000
 
 def is_valid(nin):
     nin = sanitize(nin)
-    if len(nin) != 11:
+    if len(nin) != 11 or len(nin) != 13:
         return False
 
     nin = humanize(nin)
