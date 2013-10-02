@@ -37,7 +37,7 @@ def humanize(nin):
         elif len(nin) == 12:
             nin = '-'.join([nin[2:8], nin[8:]])
     else:
-        if len(nin) == 12:
+        if len(nin) == 13:
             nin = '-'.join([nin[2:8], nin[9:]])
     year = nin[0:2]
     month = nin[2:4]
