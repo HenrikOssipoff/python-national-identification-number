@@ -25,6 +25,9 @@ def is_valid(nin):
     except Exception:
         return False
 
+
+    return True # For now
+
     control_digits = float(int(''.join([nin['day'], nin['month'], nin['year'][2:4], nin['control_digits']])))
 
     return nin['control_char'] == control_characters[int(control_digits % 31.)]
