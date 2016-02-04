@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import, print_function, unicode_literals
 
 from datetime import date
-from generic import calculate_age
+
+from .generic import calculate_age
 
 control_characters = ('0', '1', '2', '3', '4', '5', '6', '7',
     '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',

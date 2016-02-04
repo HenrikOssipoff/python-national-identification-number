@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import, print_function, unicode_literals
 
 from datetime import date
-from generic import calculate_age
+
+from .generic import calculate_age
 
 def is_valid(nin):
     nin = sanitize(nin)
