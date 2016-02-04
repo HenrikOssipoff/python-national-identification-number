@@ -3,23 +3,27 @@
 
 import importlib
 
+
 class NinValidator(object):
     _validator = None
 
     def __init__(self, country=None, nin=None):
         self._nin = None
         self._validator = None
-        if country != None:
+        if country is not None:
             self.set_country(country)
-        if nin != None:
+        if nin is not None:
             self.nin = nin
 
     def set_country(self, country):
-        self._validator = importlib.import_module('nin.validators.%s' % (country))
+        self._validator = importlib.import_module(
+            'nin.validators.%s' % (country))
         try:
             pass
         except:
-            raise Exception('Unable to load validator for specified country: %s' % (country))
+            raise Exception(
+                'Unable to load validator for specified country: %s' % (
+                    country))
 
     @property
     def nin(self):
