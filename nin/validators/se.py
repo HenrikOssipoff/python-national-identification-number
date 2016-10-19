@@ -8,15 +8,20 @@ from .generic import calculate_age
 
 break_year = 2000
 
+
 def is_valid(nin):
     nin = sanitize(nin)
     if len(nin) not in (10, 11, 12, 13):
         return False
 
-    nin = humanize(nin)
+    try:
+        nin = humanize(nin)
+    except ValueError:
+        return False
 
     return True
     # Not implemented yet
+
 
 def get_age(nin):
     nin = sanitize(nin)
@@ -26,14 +31,16 @@ def get_age(nin):
     nin = humanize(nin)
 
     try:
-        born = date(year=int(nin['year']), day=int(nin['day']), month=int(nin['month']))
+        born = date(year=int(nin['year']), day=int(
+            nin['day']), month=int(nin['month']))
     except Exception:
         return None
 
     return calculate_age(born)
 
+
 def humanize(nin):
-    if not '-' in nin and not '+' in nin:
+    if '-' not in nin and '+' not in nin:
         if len(nin) == 10:
             nin = '-'.join([nin[:6], nin[6:]])
         elif len(nin) == 12:
@@ -55,6 +62,7 @@ def humanize(nin):
     year = year_prefix + year
 
     return locals()
+
 
 def sanitize(nin):
     return nin.strip()
